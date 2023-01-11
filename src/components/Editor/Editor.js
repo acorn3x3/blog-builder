@@ -2,18 +2,18 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ title, setTitle, subtitle, setSubtitle, font, setFont}) {
-  const titleHandler = (e) => {
-    setTitle(e.target.value);
+export default function Editor({ title, setTitle }) {
+  const titleHandler = (event) => {
+    setTitle(event.target.value);
   };
 
-  const subtitleHandler = (e) => {
-    setTitle(e.target.value);
-  };
+  // const subtitleHandler = (e) => {
+  //   setTitle(e.target.value);
+  // };
 
-  const fontHandler = (e) => {
-    setTitle(e.target.value);
-  };
+  // const fontHandler = (e) => {
+  //   setTitle(e.target.value);
+  // };
 
   return (
     <div className="editor">
