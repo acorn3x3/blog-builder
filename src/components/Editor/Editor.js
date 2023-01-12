@@ -2,7 +2,18 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ title, setTitle, subtitle, setSubtitle, font, setFont, align, setAlign }) {
+export default function Editor({
+  title,
+  setTitle,
+  subtitle,
+  setSubtitle,
+  font,
+  setFont,
+  align,
+  setAlign,
+  text,
+  setText,
+}) {
   const titleHandler = (event) => {
     setTitle(event.target.value);
   };
@@ -18,6 +29,9 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, font, s
   const alignHandler = (e) => {
     setAlign(e.target.value);
   };
+  const textHandler = (e) => {
+    setText(e.target.value);
+  };
 
   return (
     <div className="editor">
@@ -26,18 +40,13 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, font, s
         <label htmlFor="title">Title</label>
       </div>
 
-
-
       <div className="form-control">
         <input type="text" value={subtitle} onChange={subtitleHandler} />
         <label>Subtitle</label>
       </div>
 
-
-
       <div className="form-control">
-        <select value={font} onChange={fontHandler} >
-
+        <select value={font} onChange={fontHandler}>
           <option value="architect">{"Architect's Daughter"}</option>
           <option value="comforter">Comforter</option>
           <option value="fredoka">Fredoka</option>
@@ -49,8 +58,6 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, font, s
         </select>
         <label>Font</label>
       </div>
-
-
 
       <div className="form-control" value={align} onChange={alignHandler}>
         <label>Alignment</label>
@@ -70,10 +77,9 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, font, s
         </div>
       </div>
 
-
-      <div className="form-control">
+      <div className="form-control" value={text} onChange={textHandler}>
         <textarea style={{ height: '250px' }} />
-        <label>Text</label>
+        <label></label>
       </div>
     </div>
   );
